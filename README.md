@@ -1,10 +1,5 @@
-# ck手动录入站点
+# 美团站点
 
-开发中，自用
+感谢：https://github.com/setsugaiootori/meituan-shenquan
 
-## 功能
-
-- [x] 扫码添加cookie到add.sqlite3数据库
-- [x] 添加cookie后传入对应路径的青龙
-- [x] 多次提交cookie更新替换
-
+在大佬基础上开发的站点，方便多人使用
