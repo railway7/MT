@@ -296,8 +296,8 @@ def drawlottery(batchId, token, propIdforuse, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行限时抢天天神券脚本🧧:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
-        wm_longitude) + "&token=" + token + "&batchId=" + batchId + "&isShareLink=true" + "&propType=1" + "&propId=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+        wm_longitude) + "&token=" + token + "&batchId=" + str(batchId) + "&isShareLink=true" + "&propType=1" + "&propId=" + str(
         propIdforuse)
     url_drawlottery = baseurl + r"/cfeplay/playcenter/batchgrabred/drawlottery"
     request = urllib.request.Request(url_drawlottery, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -369,8 +369,8 @@ def redtobean(batchId, token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**默认尝试执行面值小于5元🧧自动转红包豆脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
-        wm_longitude) + "&token=" + token + "&batchId=" + batchId
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+        wm_longitude) + "&token=" + token + "&batchId=" + str(batchId)
     url_drawlottery = baseurl + r"/cfeplay/playcenter/batchgrabred/redToBean"
     request = urllib.request.Request(url_drawlottery, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
@@ -710,7 +710,7 @@ def pushPlus(s):
     if not os.path.exists(str(cwd) + r"/output.txt"):
         print("output.txt文件异常,推送退出！🙌")
         return -1
-    file4 = open(str(cwd) + r"/output.txt", mode='r', encoding="UTF-8")
+    file4 = open(str(cwd) + r"/output.txt", mode='r')
     message = str(file4.read())
 
     file4.close
