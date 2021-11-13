@@ -158,7 +158,7 @@ def myredbean(token):
     wm_latitude = 1
     wm_longitude = 1
     print("开始执行从美团接口查询propid 和 needNumber参数脚本:\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + str(token) + "&userPortraitId=" + str(portraitId)
     url_drawlottery = baseurl + r"/cfeplay/playcenter/batchgrabred/myRedBean"
     request = urllib.request.Request(url_drawlottery, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -227,7 +227,7 @@ def getbatchId(token, s):
     wm_longitude = getVar(s)[1]
     print("**开始执行获取batchId脚本:**\n")
     try:
-        datas = "parActivityId=" + parActivityId + "&wm_ctype=" + wm_ctype + "&wm_latitude=" + str(
+        datas = "parActivityId=" + str(parActivityId) + "&wm_ctype=" + wm_ctype + "&wm_latitude=" + str(
             wm_latitude) + "&wm_longitude=" + str(wm_longitude) + "&token=" + token
         url_getbatchId = baseurl + r"/cfeplay/playcenter/batchgrabred/corepage"
         request = urllib.request.Request(url_getbatchId, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -338,7 +338,7 @@ def acceptRed(batchId, token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行发放天天神券🧧到红包库脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + token + "&batchId=" + batchId
     url_acceptRed = baseurl + r"/cfeplay/playcenter/batchgrabred/acceptRed"
     request = urllib.request.Request(url_acceptRed, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -401,7 +401,7 @@ def querymyreward(token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行查询已领天天神券🧧脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&token=" + token
+    datas = "parActivityId=" + str(parActivityId) + "&token=" + token
     url_querymyreward = baseurl + r"/cfeplay/playcenter/batchgrabred/myreward"
     request = urllib.request.Request(url_querymyreward, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
@@ -456,7 +456,7 @@ def sendTaskRedBean(token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行领取每日30豆的脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + token + "&portraitId=" + str(portraitId)
     url_sendTaskRedBean = baseurl + r"/cfeplay/playcenter/batchgrabred/sendTaskRedBean"
     request = urllib.request.Request(url_sendTaskRedBean, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -485,7 +485,7 @@ def doAction(token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行每日签到领必中符🧧的脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + token + "&action=SiginInGetProp"
     url_doaction = baseurl + r"/cfeplay/playcenter/batchgrabred/doAction"
     request = urllib.request.Request(url_doaction, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -515,7 +515,7 @@ def querymyProps(token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行查询道具库中必中符🧧详情的脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + token
     url_querymyprops = baseurl + r"/cfeplay/playcenter/batchgrabred/myProps"
     request = urllib.request.Request(url_querymyprops, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -585,7 +585,7 @@ def exchange(token, s):
     while (1):
         datas = "wm_actual_longitude=" + wm_actual_longitude + "&wm_actual_latitude=" + wm_actual_latitude + "&exchangeRuleId=&propId=" + str(
             propId) + "&exchangeCoinNumber=" + str(
-            exchangeCoinNumber) + "&parActivityId=" + parActivityId + "&wm_ctype=" + wm_ctype + "&wm_latitude=" + str(
+            exchangeCoinNumber) + "&parActivityId=" + str(parActivityId) + "&wm_ctype=" + wm_ctype + "&wm_latitude=" + str(
             wm_latitude) + "&wm_longitude=" + str(wm_longitude) + "&token=" + token
         url_exchange = baseurl + r"/cfeplay/playcenter/batchgrabred/exchange"
         request = urllib.request.Request(url_exchange, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -621,7 +621,7 @@ def myRedBeanRecords(token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行查询豆子变化详情参数脚本**:\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + str(token) + "&userPortraitId=" + str(portraitId) + "&pageNum=1"
     url_myredbeanRecords = baseurl + r"/cfeplay/playcenter/batchgrabred/myRedBeanRecords"
     request = urllib.request.Request(url_myredbeanRecords, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -662,7 +662,7 @@ def queryredpool(token, s):
     wm_latitude = getVar(s)[0]
     wm_longitude = getVar(s)[1]
     print("**开始执行查询红包池详情脚本:**\n")
-    datas = "parActivityId=" + parActivityId + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
+    datas = "parActivityId=" + str(parActivityId) + "&wm_latitude=" + str(wm_latitude) + "&wm_longitude=" + str(
         wm_longitude) + "&token=" + str(token) + "&wm_ctype=" + wm_ctype
     url_myredbeanRecords = baseurl + r"/cfeplay/playcenter/batchgrabred/corepage"
     request = urllib.request.Request(url_myredbeanRecords, headers=head, data=datas.encode("utf-8"), method="POST")
@@ -722,7 +722,7 @@ def pushPlus(s):
     print("**开始执行pushPlus推送脚本:**\n")
     datas = bytes(urllib.parse.urlencode(
         {"title": "天天神券推送", "content": message, "token": pushPlusToken, "template": "markdown", "channel": "wechat",
-         "webhook": webhook, "callbackUrl": ""}), encoding="UTF-8")
+         "webhook": webhook, "callbackUrl": ""}), encoding="utf-8")
     request = urllib.request.Request(pushurl, headers=head_server, data=datas, method="POST")
     try:
         response = urllib.request.urlopen(request, timeout=30)
@@ -747,7 +747,7 @@ def serverjiang():
     if not os.path.exists(str(cwd) + r"/output.txt"):
         print("output.txt文件异常,推送退出！🙌")
         return -1
-    file4 = open(str(cwd) + r"/output.txt", mode='r', encoding="UTF-8")
+    file4 = open(str(cwd) + r"/output.txt", mode='r', encoding="utf-8")
     message = str(file4.read())
     file4.close
     pushurl = "https://sctapi.ftqq.com/"
@@ -756,7 +756,7 @@ def serverjiang():
                    "content-type": "application/x-www-form-urlencoded"}
     url_serverkey = pushurl + serverkey + ".send"
     print("**开始执行server酱推送脚本:**\n")
-    datas = bytes(urllib.parse.urlencode({"title": "天天神券推送", "desp": message, "channel": ""}), encoding="UTF-8")
+    datas = bytes(urllib.parse.urlencode({"title": "天天神券推送", "desp": message, "channel": ""}), encoding="utf-8")
     request = urllib.request.Request(url_serverkey, headers=head_server, data=datas, method="POST")
     try:
         response = urllib.request.urlopen(request, timeout=30)
@@ -808,7 +808,7 @@ def pushPlusforexpire(s):
     print("**开始执行pushPlus推送脚本:**\n")
     datas = bytes(urllib.parse.urlencode(
         {"title": "token失效告警", "content": message, "token": pushPlusToken, "template": "markdown", "channel": "wechat",
-         "webhook": webhook, "callbackUrl": ""}), encoding="UTF-8")
+         "webhook": webhook, "callbackUrl": ""}), encoding="utf-8")
     request = urllib.request.Request(pushurl, headers=head_server, data=datas, method="POST")
     try:
         response = urllib.request.urlopen(request, timeout=30)
@@ -840,7 +840,7 @@ def serverjiangforexpire():
                    "content-type": "application/x-www-form-urlencoded"}
     url_serverkey = pushurl + serverkey + ".send"
     print("**开始执行server酱推送脚本:**\n")
-    datas = bytes(urllib.parse.urlencode({"title": "token失效告警", "desp": message, "channel": ""}), encoding="UTF-8")
+    datas = bytes(urllib.parse.urlencode({"title": "token失效告警", "desp": message, "channel": ""}), encoding="utf-8")
     request = urllib.request.Request(url_serverkey, headers=head_server, data=datas, method="POST")
     try:
         response = urllib.request.urlopen(request, timeout=30)
@@ -990,11 +990,14 @@ def main(s):
     if n_time < d_time7:
         propIdforuse = 1
     drawlottery(batchId, token, propIdforuse, s)
-
-    if (int(showPriceNumber) < 500):
-        redtobean(batchId, token, s)
-    else:
-        acceptRed(batchId, token, s)
+    
+    try:
+        if (int(showPriceNumber) < 500):
+            redtobean(batchId, token, s)
+        else:
+            acceptRed(batchId, token, s)
+    except:
+        pass
     querymyreward(token, s)
     sendTaskRedBean(token, s)
     querymyProps(token, s)
