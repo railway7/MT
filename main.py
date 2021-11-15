@@ -111,7 +111,7 @@ fifty_left = 0
 class Logger(object):
     def __init__(self, fileN='Default.log'):
         self.terminal = sys.stdout
-        self.log = open(fileN, 'w+', encoding='utf-8')
+        self.log = open(fileN, 'w+', encoding='utf-8', errors='ignore')
 
     def write(self, message):
         '''print实际相当于sys.stdout.write'''
@@ -710,7 +710,7 @@ def pushPlus(s):
     if not os.path.exists(str(cwd) + r"/output.txt"):
         print("output.txt文件异常,推送退出！🙌")
         return -1
-    file4 = open(str(cwd) + r"/output.txt", mode='r')
+    file4 = open(str(cwd) + r"/output.txt", mode='r',errors='ignore')
     message = str(file4.read())
 
     file4.close
@@ -747,7 +747,7 @@ def serverjiang():
     if not os.path.exists(str(cwd) + r"/output.txt"):
         print("output.txt文件异常,推送退出！🙌")
         return -1
-    file4 = open(str(cwd) + r"/output.txt", mode='r', encoding="utf-8")
+    file4 = open(str(cwd) + r"/output.txt", mode='r', encoding="utf-8",errors='ignore')
     message = str(file4.read())
     file4.close
     pushurl = "https://sctapi.ftqq.com/"
