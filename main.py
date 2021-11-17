@@ -905,7 +905,7 @@ def main(s):
     doAction(token, s)
     myRedBeanRecords(token, s)
     if leftdou >= setexchangedou:
-        exchange(token)
+        exchange(token, s)
     else:
         print("您当前红包豆为%d未满预设的%d数量，不会执行红包豆兑换必中符脚本，多攒几天豆子再来吧!\n" % (leftdou, setexchangedou))
     querymyProps(token, s)
