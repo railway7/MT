@@ -163,7 +163,7 @@ def myredbean(token):
     url_drawlottery = baseurl + r"/cfeplay/playcenter/batchgrabred/myRedBean"
     request = urllib.request.Request(url_drawlottery, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         cent = 1
@@ -231,7 +231,7 @@ def getbatchId(token, s):
             wm_latitude) + "&wm_longitude=" + str(wm_longitude) + "&token=" + token
         url_getbatchId = baseurl + r"/cfeplay/playcenter/batchgrabred/corepage"
         request = urllib.request.Request(url_getbatchId, headers=head, data=datas.encode("utf-8"), method="POST")
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         # print(result2)
@@ -268,7 +268,7 @@ def signForBeans(token):
     url_signforbeans = baseurl + r"/cfeplay/playcenter/batchgrabred/drawPoints/v2"
     request = urllib.request.Request(url_signforbeans, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         # print(result2)
@@ -302,7 +302,7 @@ def drawlottery(batchId, token, propIdforuse, s):
     url_drawlottery = baseurl + r"/cfeplay/playcenter/batchgrabred/drawlottery"
     request = urllib.request.Request(url_drawlottery, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         # print(result2)
@@ -343,7 +343,7 @@ def acceptRed(batchId, token, s):
     url_acceptRed = baseurl + r"/cfeplay/playcenter/batchgrabred/acceptRed"
     request = urllib.request.Request(url_acceptRed, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         # print(result2)
@@ -374,7 +374,7 @@ def redtobean(batchId, token, s):
     url_drawlottery = baseurl + r"/cfeplay/playcenter/batchgrabred/redToBean"
     request = urllib.request.Request(url_drawlottery, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         # print(result2)
@@ -405,7 +405,7 @@ def querymyreward(token, s):
     url_querymyreward = baseurl + r"/cfeplay/playcenter/batchgrabred/myreward"
     request = urllib.request.Request(url_querymyreward, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         # print(result2)
@@ -461,7 +461,7 @@ def sendTaskRedBean(token, s):
     url_sendTaskRedBean = baseurl + r"/cfeplay/playcenter/batchgrabred/sendTaskRedBean"
     request = urllib.request.Request(url_sendTaskRedBean, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         if (result2["status"] == 0):
@@ -490,7 +490,7 @@ def doAction(token, s):
     url_doaction = baseurl + r"/cfeplay/playcenter/batchgrabred/doAction"
     request = urllib.request.Request(url_doaction, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         if (result2["code"] == 0 and result2["data"]["signDays"] != 0):
@@ -520,7 +520,7 @@ def querymyProps(token, s):
     url_querymyprops = baseurl + r"/cfeplay/playcenter/batchgrabred/myProps"
     request = urllib.request.Request(url_querymyprops, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         if (result2["code"] == 0 and len(result2["data"])):
@@ -590,7 +590,7 @@ def exchange(token, s):
         url_exchange = baseurl + r"/cfeplay/playcenter/batchgrabred/exchange"
         request = urllib.request.Request(url_exchange, headers=head, data=datas.encode("utf-8"), method="POST")
         try:
-            response = urllib.request.urlopen(request, timeout=10)
+            response = urllib.request.urlopen(request, timeout=30)
             result = response.read().decode("utf-8")
             result2 = json.loads(result)
             if (result2["code"] == 0 and result2["subcode"] == 0):
@@ -626,7 +626,7 @@ def myRedBeanRecords(token, s):
     url_myredbeanRecords = baseurl + r"/cfeplay/playcenter/batchgrabred/myRedBeanRecords"
     request = urllib.request.Request(url_myredbeanRecords, headers=head, data=datas.encode("utf-8"), method="POST")
     try:
-        response = urllib.request.urlopen(request, timeout=10)
+        response = urllib.request.urlopen(request, timeout=30)
         result = response.read().decode("utf-8")
         result2 = json.loads(result)
         cent = 1
