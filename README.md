@@ -1,4 +1,4 @@
-# 美团站点
+# 美团站点（长期运行有bug）
 
 感谢：https://github.com/setsugaiootori/meituan-shenquan
 
